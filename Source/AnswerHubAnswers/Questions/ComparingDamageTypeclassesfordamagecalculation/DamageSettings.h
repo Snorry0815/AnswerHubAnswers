@@ -13,5 +13,9 @@ UCLASS()
 class ANSWERHUBANSWERS_API UDamageSettings : public UDataTable
 {
 	GENERATED_BODY()
-	
+
+	void OnBulletHit(AActor* SelfActor);
+public:
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Table|stuff")
+	FName mapName;
 };
