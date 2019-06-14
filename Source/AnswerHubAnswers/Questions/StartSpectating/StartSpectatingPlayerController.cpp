@@ -1,6 +1,7 @@
 
 #include "StartSpectatingPlayerController.h"
 #include "GameFramework/SpectatorPawn.h"
+#include "GameFramework/PlayerState.h"
 
 void AStartSpectatingPlayerController::OnRep_Pawn()
 {
@@ -17,6 +18,7 @@ void AStartSpectatingPlayerController::StartSpectating()
 	if (!HasAuthority())
 		return;
 
+	PlayerState->bIsSpectator = true;
 	ChangeState(NAME_Spectating);
 	Client_StartSpectating();
 }
@@ -26,6 +28,7 @@ void AStartSpectatingPlayerController::StartPlaying()
 	if (!HasAuthority())
 		return;
 
+	PlayerState->bIsSpectator = false;
 	ChangeState(NAME_Playing); 
 	ClientGotoState(NAME_Playing);
 }
