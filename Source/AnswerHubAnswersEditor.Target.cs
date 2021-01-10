@@ -8,6 +8,8 @@ public class AnswerHubAnswersEditorTarget : TargetRules
 	public AnswerHubAnswersEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
+
 		ExtraModuleNames.Add("AnswerHubAnswers");
 	}
 }

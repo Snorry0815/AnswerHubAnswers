@@ -18,7 +18,7 @@ void AStartSpectatingPlayerController::StartSpectating()
 	if (!HasAuthority())
 		return;
 
-	PlayerState->bIsSpectator = true;
+	PlayerState->SetIsSpectator(true);
 	ChangeState(NAME_Spectating);
 	Client_StartSpectating();
 }
@@ -28,7 +28,7 @@ void AStartSpectatingPlayerController::StartPlaying()
 	if (!HasAuthority())
 		return;
 
-	PlayerState->bIsSpectator = false;
+	PlayerState->SetIsSpectator(false);
 	ChangeState(NAME_Playing); 
 	ClientGotoState(NAME_Playing);
 }

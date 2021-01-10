@@ -8,6 +8,8 @@ public class AnswerHubAnswersTarget : TargetRules
 	public AnswerHubAnswersTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
+
 		ExtraModuleNames.Add("AnswerHubAnswers");
 	}
 }
